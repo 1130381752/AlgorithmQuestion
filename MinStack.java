@@ -3,7 +3,7 @@ package test;
 import java.util.Stack;
 
 /**
- * 编号：155
+ * 编号：LC 155
  * 难度：简单
  * 最小栈：设计1个支持push、pop、top操作，并能在常数时间内检索到最小元素的栈。
  * 
