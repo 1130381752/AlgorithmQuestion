@@ -4,9 +4,8 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
- * 编号：LC 9
- * 难度：简单
- * 回文数：回文数是指正序（从左往右）和倒序（从右往左）读都是一样的整数，判断一个数是否为回文数。
+ * 编号：LC 9 难度：简单 回文数：回文数是指正序（从左往右）和倒序（从右往左）读都是一样的整数，判断一个数是否为回文数。
+ * 
  * @author hWX5322377
  *
  */
@@ -18,14 +17,14 @@ public class HuiWenNum {
 //		1
 //		121
 //		1221
-      @SuppressWarnings("resource")
-	Scanner in = new Scanner(System.in);
+		@SuppressWarnings("resource")
+		Scanner in = new Scanner(System.in);
 		while (in.hasNextInt()) {
-    		Utils.println(isHuiWenNum(in.nextInt()));
-        }
+			Utils.println(isHuiWenNum(in.nextInt()));
+		}
 	}
-	
-	//非字符串方法
+
+	// 非字符串方法
 	public static boolean isHuiWenNum(int num) {
 		if (num > 0) {
 			if (num < 10) {
@@ -57,8 +56,8 @@ public class HuiWenNum {
 		}
 		return false;
 	}
-	
-	//字符串方法
+
+	// 字符串方法
 	public static boolean isHuiWenNumStr(int num) {
 		if (num > 0) {
 			String str = String.valueOf(num);
