@@ -3,25 +3,12 @@ package test;
 import java.util.Scanner;
 
 /**
- * 编号：LC 13
- * 难度：简单
- * 罗马数字转整数：罗马数字包含以下七种字符：I、V、X、L、C、D、M
+ * 编号：LC 13 难度：简单 罗马数字转整数：罗马数字包含以下七种字符：I、V、X、L、C、D、M
  * 
- * I ---> 1
- * V ---> 5
- * X ---> 10
- * L ---> 50
- * C ---> 100
- * D ---> 500
- * M ---> 1000
+ * I ---> 1 V ---> 5 X ---> 10 L ---> 50 C ---> 100 D ---> 500 M ---> 1000
  * 
-   * 如果左边的数字的值比右边的小，则用右边的减左边，如IV代表4（5-1），但这种排列只有以下几种情况：
- * IV ---> 4
- * IX ---> 9
- * XL ---> 40
- * XC ---> 90
- * CD ---> 400
- * CM ---> 900
+ * 如果左边的数字的值比右边的小，则用右边的减左边，如IV代表4（5-1），但这种排列只有以下几种情况： IV ---> 4 IX ---> 9 XL
+ * ---> 40 XC ---> 90 CD ---> 400 CM ---> 900
  * 
  * @author hWX5322377
  *
@@ -30,7 +17,7 @@ import java.util.Scanner;
 public class RomanNum {
 	public static void main(String[] args) {
 		@SuppressWarnings("resource")
-      	Scanner in = new Scanner(System.in);
+		Scanner in = new Scanner(System.in);
 		while (in.hasNextLine()) {
 //			"III"
 //			"IV"
@@ -38,9 +25,9 @@ public class RomanNum {
 //			"LVIII"
 //			"MCMXCIV"
 			Utils.println(readRomanNum(in.nextLine()));
-        }
+		}
 	}
-	
+
 	public static int readRomanNum(String str) {
 		int pre = 0;
 		int next = 0;
@@ -60,7 +47,7 @@ public class RomanNum {
 		}
 		return sum;
 	}
-	
+
 	public static int getValue(char s) {
 		int res = 0;
 		switch (s) {
