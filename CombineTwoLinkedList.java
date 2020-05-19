@@ -4,7 +4,7 @@ import java.util.Comparator;
 import java.util.LinkedList;
 
 /**
- * 编号：21
+ * 编号：LC 21
  * 难度：简单
  * 合并2个有序链表：将2个升序链表合并成1个新的升序链表并返回，不需要去重。
  * @author hWX5322377
