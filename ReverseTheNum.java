@@ -1,5 +1,7 @@
 package test;
 
+import java.util.Scanner;
+
 /**
  * 编号：LC 7
  * 难度：简单
@@ -10,7 +12,11 @@ package test;
 
 public class ReverseTheNum {
 	public static void main(String[] args) {
-		Utils.println(reverseNum(-12345));
+//		-12345
+		Scanner in = new Scanner(System.in);
+		while (in.hasNextInt()) {
+			Utils.println(reverseNum(in.nextInt()));
+		}
 	}
 	
 	public static String reverseNum(int num) {
