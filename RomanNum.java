@@ -1,5 +1,7 @@
 package test;
 
+import java.util.Scanner;
+
 /**
  * 编号：LC 13
  * 难度：简单
@@ -27,11 +29,16 @@ package test;
 
 public class RomanNum {
 	public static void main(String[] args) {
-		Utils.println(readRomanNum("III"));
-		Utils.println(readRomanNum("IV"));
-		Utils.println(readRomanNum("IX"));
-		Utils.println(readRomanNum("LVIII"));
-		Utils.println(readRomanNum("MCMXCIV"));
+		@SuppressWarnings("resource")
+      	Scanner in = new Scanner(System.in);
+		while (in.hasNextLine()) {
+//			"III"
+//			"IV"
+//			"IX"
+//			"LVIII"
+//			"MCMXCIV"
+			Utils.println(readRomanNum(in.nextLine()));
+        }
 	}
 	
 	public static int readRomanNum(String str) {
