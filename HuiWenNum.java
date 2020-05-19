@@ -3,7 +3,7 @@ package test;
 import java.util.ArrayList;
 
 /**
- * 编号：9
+ * 编号：LC 9
  * 难度：简单
  * 回文数：回文数是指正序（从左往右）和倒序（从右往左）读都是一样的整数，判断一个数是否为回文数。
  * @author hWX5322377
