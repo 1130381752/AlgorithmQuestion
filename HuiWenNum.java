@@ -1,6 +1,7 @@
 package test;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  * 编号：LC 9
@@ -12,11 +13,16 @@ import java.util.ArrayList;
 
 public class HuiWenNum {
 	public static void main(String[] args) {
-		Utils.println(isHuiWenNum(-121));
-		Utils.println(isHuiWenNum(100));
-		Utils.println(isHuiWenNum(1));
-		Utils.println(isHuiWenNum(121));
-		Utils.println(isHuiWenNum(1221));
+//		-121
+//		100
+//		1
+//		121
+//		1221
+      @SuppressWarnings("resource")
+	Scanner in = new Scanner(System.in);
+		while (in.hasNextInt()) {
+    		Utils.println(isHuiWenNum(in.nextInt()));
+        }
 	}
 	
 	//非字符串方法
