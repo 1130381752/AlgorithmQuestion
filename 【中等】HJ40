@@ -1,0 +1,60 @@
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		answerQuestion();
+	}
+
+	public static void answerQuestion() {
+		Scanner sc = new Scanner(System.in);
+		while (sc.hasNext()) {	
+			int num1 = 0;	
+			int num2 = 0;	
+			int num3 = 0;	
+			int num4 = 0;
+			String line = sc.nextLine();
+			for(int i = 0; i < line.length(); i++) {
+				char c = line.charAt(i);
+				if (isNum1(c)) {
+					num1++;
+				} else if (isNum2(c)) {
+					num2++;
+				} else if (isNum3(c)) {
+					num3++;
+				} else {
+					num4++;
+				} 
+			}
+			System.out.println(num1);
+			System.out.println(num2);
+			System.out.println(num3);
+			System.out.println(num4);
+		}
+	}
+	
+	public static boolean isNum1(char c) {
+		byte aByte = getCharCode('a');
+		byte zByte = getCharCode('z');
+		byte AByte = getCharCode('A');
+		byte ZByte = getCharCode('Z');
+		byte tByte = getCharCode(c);
+		return (tByte >= aByte && tByte <= zByte) || (tByte >= AByte && tByte <= ZByte);
+	}
+	
+	public static boolean isNum2(char c) {
+		byte sByte = getCharCode(' ');
+		byte tByte = getCharCode(c);
+		return tByte == sByte;
+	}
+	
+	public static boolean isNum3(char c) {
+		byte aByte = getCharCode('0');
+		byte zByte = getCharCode('9');
+		byte tByte = getCharCode(c);
+		return tByte >= aByte && tByte <= zByte;
+	}
+	
+	public static byte getCharCode(char c) {
+		return (byte) c; 
+	}
+}
