@@ -1,0 +1,46 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		answerQuestion();
+	}
+
+	public static void answerQuestion() {
+		Scanner sc = new Scanner(System.in);
+		while (sc.hasNext()) {
+			String line = sc.nextLine().toLowerCase();
+			ArrayList<Character> cList = new ArrayList<Character>();
+			ArrayList<Integer> nList = new ArrayList<Integer>();
+			for(int i = 0; i < line.length(); i++) {
+				Character c = line.charAt(i);
+				if (!isWord(c)) {
+					continue;
+				}
+				if (!cList.contains(c)) {
+					cList.add(c);
+					nList.add(1);
+				} else {
+					int index = cList.indexOf(c);
+					nList.set(index, nList.get(index) + 1);
+				}
+			}
+			Collections.sort(nList);
+			Collections.reverse(nList);
+			int len = nList.size();
+			int sum = 0;
+			for(int i = 0; i < len; i++) {
+				sum += nList.get(i) * (26 - i);
+			}
+			System.out.println(sum);
+		}
+	}
+	
+	public static boolean isWord(char c) {
+		byte aByte = (byte) 'a';
+		byte zByte = (byte) 'z';
+		byte tByte = (byte) c;
+		return tByte >= aByte && tByte <= zByte;
+	}
+}
