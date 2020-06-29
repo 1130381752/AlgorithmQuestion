@@ -1,0 +1,26 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		answerQuestion();
+	}
+
+	public static void answerQuestion() {
+		Scanner sc = new Scanner(System.in);
+		while (sc.hasNext()) {			
+			String string = sc.nextLine();
+			ArrayList<Character> charList = new ArrayList<Character>();
+			for(int i = 0; i < string.length(); i++) {
+				charList.add(string.charAt(i));
+			}
+			Collections.sort(charList);
+			StringBuilder sb = new StringBuilder();
+			for (int i = 0; i < charList.size(); i++) {
+				sb.append(charList.get(i));
+			}
+			System.out.println(sb.toString());
+		}
+	}
+}
