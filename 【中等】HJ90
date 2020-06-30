@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		answerQuestion();
+	}
+
+	public static void answerQuestion() {
+		Scanner sc = new Scanner(System.in);
+		while (sc.hasNextLine()) {
+			String line = sc.nextLine();
+			String[] words = line.split("\\.");
+			if (words.length == 4) {
+				int num = 0;
+				for(String str:words) {
+					try {
+						if (!str.contains("+") && !str.contains("-") && Integer.parseInt(str) >= 0 && Integer.parseInt(str) <= 255) {
+							num++;
+						} else {
+							break;
+						}
+					} catch (NumberFormatException e) {
+						break;
+					}
+				}
+				if (num != 4) {
+					System.out.println("NO");
+				} else {
+					System.out.println("YES");
+				}
+			} else {
+				System.out.println("NO");
+			}
+		}
+	}
+}
