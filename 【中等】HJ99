@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		answerQuestion();
+	}
+
+	public static void answerQuestion() {
+		Scanner sc = new Scanner(System.in);
+		while (sc.hasNextLine()) {
+			String line = sc.nextLine();
+			try {
+				Integer num = Integer.parseInt(line);
+				int sum = 0;
+				for (int i = 0; i <= num; i++) {
+					long squre = i * i;
+					if (String.valueOf(squre).endsWith(String.valueOf(i))) {
+						sum++;
+					}
+				}
+				System.out.println(sum);
+			} catch (NumberFormatException e) {
+				
+			}
+		}
+	}
+}
