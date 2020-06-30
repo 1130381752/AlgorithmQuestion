@@ -1,0 +1,38 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		answerQuestion();
+	}
+
+	public static void answerQuestion() {
+		Scanner sc = new Scanner(System.in);
+		while (sc.hasNextLine()) {
+			String line = sc.nextLine();
+			ArrayList<Character> list = new ArrayList<Character>();
+			ArrayList<Integer> nums = new ArrayList<Integer>();
+			for(int i = 0; i < line.length(); i++) {
+				if (!list.contains(line.charAt(i))) {
+					list.add(line.charAt(i));
+					nums.add(1);
+				} else {
+					int index = list.indexOf(line.charAt(i));
+					nums.set(index, nums.get(index) + 1);
+				}
+			}
+			Character character = null;
+			for(int i = 0; i < nums.size(); i++) {
+				if (nums.get(i) == 1) {
+					character = list.get(i);
+					break;
+				}
+			}
+			if (character == null) {
+				System.out.println(-1);
+			} else {
+				System.out.println(character);
+			}
+		}
+	}
+}
