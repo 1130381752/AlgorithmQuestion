@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		answerQuestion();
+	}
+
+	public static void answerQuestion() {
+		Scanner sc = new Scanner(System.in);
+		while (sc.hasNextLine()) {
+			String line = sc.nextLine();
+			try {
+				Integer num = Integer.parseInt(line);
+				if (num > 0 && num <= 30000) {
+					int sevenNum = 0;
+					for(int i = 7; i <= num; i++) {
+						if (i % 7 == 0 || String.valueOf(i).contains("7")) {
+							sevenNum++;
+						}
+					}
+					System.out.println(sevenNum);
+				}
+			} catch (NumberFormatException e) {
+				
+			}
+		}
+	}
+}
