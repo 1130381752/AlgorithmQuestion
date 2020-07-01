@@ -1,0 +1,37 @@
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		answerQuestion();
+	}
+
+	public static void answerQuestion() {
+		Scanner scanner = new Scanner(System.in);
+		while (scanner.hasNextLine()) {
+			try {
+				Integer numInteger = Integer.parseInt(scanner.nextLine());
+				String str = "";
+				for(int i = 0; i < numInteger; i++) {
+					str += scanner.nextLine();
+				}
+				// 多余的字符
+				int moreNum = str.length() % 8;
+				int num = str.length() / 8 + (moreNum == 0 ? 0 : 1);
+				for (int i = 0; i < num; i++) {
+					if (i == num - 1 && moreNum != 0) {
+						int zeroNum = 8 - moreNum;
+						String temp = str.substring(8 * i, str.length());
+						for (int j = 0; j < zeroNum; j++) {
+							temp += "0";
+						}
+						System.out.println(temp);
+					} else {
+						System.out.println(str.substring(8 * i, 8 * (i + 1)));
+					}
+				}
+			} catch (NumberFormatException e) {
+				
+			}
+		}
+	}
+}
