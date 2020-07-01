@@ -1,0 +1,33 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		answerQuestion();
+	}
+
+	public static void answerQuestion() {
+		Scanner scanner = new Scanner(System.in);
+		while (scanner.hasNext()) {
+			String numStr= scanner.next();
+			try {
+				int num = Integer.parseInt(numStr);
+				if (num > 0) {
+					ArrayList<String> strs = new ArrayList<String>();
+					for (int i = 0; i < num; i++) {
+						strs.add(scanner.next());
+					}
+					Collections.sort(strs);
+					for (String str: strs) {
+						System.out.println(str);
+					}
+				} else {
+					System.out.println("");
+				}
+			} catch (NumberFormatException e) {
+				System.out.println("");
+			}
+		}
+	}
+}
