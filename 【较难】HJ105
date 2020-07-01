@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		answerQuestion();
+	}
+
+	public static void answerQuestion() {
+		Scanner sc = new Scanner(System.in);
+		while (sc.hasNext()) {
+			String line = sc.next();
+			int sum = 0;
+			int sumRes = 0;
+			try {
+				Integer n = Integer.parseInt(line);
+				for(int i = 0; i < n; i++) {
+					Integer num = Integer.parseInt(sc.next());
+					if (num < 0) {
+						sum++;
+					} else if(num > 0) {
+						sumRes += num;
+					}
+				}
+				if(n - sum != 0) {
+					float f = 1f * sumRes / (n - sum);
+					String str = String.format("%.1f", f);
+					System.out.println(sum + " " + str);
+				}
+			} catch (NumberFormatException e) {
+				
+			}
+		}
+	}
+}
